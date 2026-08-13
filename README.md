@@ -5,7 +5,7 @@ A fully serverless, event-driven web application built on AWS that enables users
 ![Architecture Diagram](<images/ARCHITECTURE-STAGE5.png>)
 
 > **Credits & Acknowledgments:**  
-> This project is based on the advanced serverless demo lab by **Adrian Cantrill** ([learn.cantrill.io](https://learn.cantrill.io)). Implemented, configured, debugged, and documented as a hands-on portfolio build.
+> Based on the advanced serverless demo lab from **Adrian Cantrill** ([learn.cantrill.io](https://learn.cantrill.io)). Original lab instructions and starter code sourced from the [learn-cantrill-io-labs](https://github.com/acantril/learn-cantrill-io-labs) repository. Implemented, debugged, and documented as a personal portfolio build.
 
 ---
 
