@@ -2,7 +2,7 @@
 
 A fully serverless, event-driven web application built on AWS that enables users to schedule automated pet cuddle email reminders using a custom timer delay.
 
-![Architecture Diagram](<images/ARCHITECTURE-STAGE5.jpg>)
+![Architecture Diagram](<images/ARCHITECTURE-STAGE5.png>)
 
 > **Credits & Acknowledgments:**  
 > This project is based on the advanced serverless demo lab by **Adrian Cantrill** ([learn.cantrill.io](https://learn.cantrill.io)). Implemented, configured, debugged, and documented as a hands-on portfolio build.
