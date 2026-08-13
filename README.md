@@ -2,7 +2,7 @@
 
 A fully serverless, event-driven web application built on AWS that enables users to schedule automated pet cuddle email reminders using a custom timer delay.
 
-![Architecture Diagram](./ARCHITECTURE-STAGE5.jpg)
+![Architecture Diagram](<images/ARCHITECTURE-STAGE5.jpg>)
 
 > **Credits & Acknowledgments:**  
 > This project is based on the advanced serverless demo lab by **Adrian Cantrill** ([learn.cantrill.io](https://learn.cantrill.io)). Implemented, configured, debugged, and documented as a hands-on portfolio build.
@@ -38,7 +38,7 @@ The application uses a decoupled, serverless architecture split across five core
 ### Stage 1: Configure Simple Email Service (SES)
 Verified identity status for both the sender (`FROM_EMAIL_ADDRESS`) and recipient email addresses in Amazon SES to authorize email dispatch before wiring up automation.
 
-![SES Verified Identities](./screenshots/01-ses-verified-identities.png)
+![SES Verified Identities](<images/01-ses-verified-identities.png>)
 
 ---
 
@@ -47,7 +47,7 @@ Developed `email_remainder_lambda` in Python using `boto3` to trigger SES email 
 
 | Email Lambda Code | IAM Execution Policy |
 | :---: | :---: |
-| ![Email Lambda Code](./screenshots/02-email-lambda-code.png) | ![IAM Permissions](./screenshots/02-iam-lambda-policy.png) |
+| ![Email Lambda Code](<images/02-email-lambda-code.png>) | ![IAM Permissions](<images/02-iam-lambda-policy.png>) |
 
 ---
 
@@ -56,21 +56,21 @@ Built the core `PetCuddleOTron` state machine using Amazon States Language (ASL)
 
 | ASL Workflow Definition | Successful Execution Run |
 | :---: | :---: |
-| ![ASL Definition](./screenshots/03-asl-definition.png) | ![Step Functions Execution](./screenshots/03-execution-graph.png) |
+| ![ASL Definition](<images/03-asl-definition.png>) | ![Step Functions Execution](<images/03-execution-graph.png>) |
 
 ---
 
 ### Stage 4: API Gateway & Supporting API Lambda
 Created a REST API on API Gateway with a `/petcuddleotron` resource supporting `POST` and `OPTIONS` methods. Wrote an API Lambda function to parse incoming JSON payloads, validate inputs, and invoke `sfn.start_execution()`. Enabled full CORS preflight handling across API Gateway and Lambda proxy headers.
 
-![API Gateway Setup](./screenshots/04-api-gateway-setup.png)
+![API Gateway Setup](<images/04-api-gateway-setup.png>)
 
 ---
 
 ### Stage 5: Static Frontend Application & Testing
 Deployed static web interface assets to an Amazon S3 bucket configured for static website hosting. Updated `serverless.js` to send POST requests to the API Gateway Invoke URL and verified end-to-end execution directly through browser interaction.
 
-![Frontend App Success](./screenshots/05-frontend-ui-success.png)
+![Frontend App Success](<images/05-frontend-ui-success.png>)
 
 ---
 
