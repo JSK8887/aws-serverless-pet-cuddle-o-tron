@@ -84,8 +84,8 @@ To prevent unnecessary AWS charges, all project resources were torn down in reve
 
 ---
 
-## 💡 Key Engineering Insights & Troubleshooting
+## 💡 Key Architectural Learnings
 
-* **CloudWatch Log Tracing (IAM Role vs. State Machine ARN)**: Resolved an `Internal Server Error (500)` caused by passing an IAM Role ARN to `sfn.start_execution()` instead of the State Machine resource ARN (`arn:aws:states:...`). Located the exact Python line failure by inspecting CloudWatch Log Streams.
-* **CORS Preflight Configuration**: Resolved `TypeError: Failed to fetch` browser errors by explicitly configuring API Gateway CORS (`OPTIONS` method & Gateway response headers) and returning `"Access-Control-Allow-Origin": "*"` inside the Lambda proxy response payload.
-* **Safe Proxy Payload Parsing**: Refactored Python event handling logic to safely process both stringified JSON and dictionary `event['body']` inputs sent via API Gateway Proxy Integration.
+* **Cost-Efficient Workflow Orchestration**: Learned to use AWS Step Functions' native `Wait` state to handle custom timing delays instead of running idle sleeping code in Lambda (`time.sleep()`), preventing unnecessary compute charges and creating a truly decoupled, event-driven architecture.
+* **Cross-Origin Resource Sharing (CORS)**: Understood how browsers handle cross-domain security and configured API Gateway CORS preflight settings so the static website hosted on S3 can seamlessly communicate with the backend API.
+* **Least-Privilege Security with IAM**: Configured dedicated IAM execution roles for each serverless component, ensuring services only hold the explicit permissions required to perform their specific tasks (such as granting SES email sending or Step Functions invocation).
