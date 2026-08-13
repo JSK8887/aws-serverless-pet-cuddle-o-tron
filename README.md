@@ -86,6 +86,6 @@ To prevent unnecessary AWS charges, all project resources were torn down in reve
 
 ## 💡 Key Architectural Learnings
 
-* **Cost-Efficient Workflow Orchestration**: Learned to use AWS Step Functions' native `Wait` state to handle custom timing delays instead of running idle sleeping code in Lambda (`time.sleep()`), preventing unnecessary compute charges and creating a truly decoupled, event-driven architecture.
-* **Cross-Origin Resource Sharing (CORS)**: Understood how browsers handle cross-domain security and configured API Gateway CORS preflight settings so the static website hosted on S3 can seamlessly communicate with the backend API.
-* **Least-Privilege Security with IAM**: Configured dedicated IAM execution roles for each serverless component, ensuring services only hold the explicit permissions required to perform their specific tasks (such as granting SES email sending or Step Functions invocation).
+* **Event-Driven Compute Efficiency**: Understood how event-driven serverless architectures drastically reduce operational costs by consuming compute resources only when invoked by an event, ensuring zero cost during idle periods.
+* **Cross-Origin Accessibility (CORS)**: Configured API Gateway CORS preflight settings so any browser or frontend client can seamlessly talk to the backend API across different domains without being blocked by browser security rules.
+* **Least-Privilege Security with IAM**: Configured dedicated IAM execution roles for each serverless component, ensuring services only hold the explicit permissions required to execute their specific tasks (such as granting SES email sending permissions).
