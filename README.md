@@ -84,8 +84,10 @@ To prevent unnecessary AWS charges, all project resources were torn down in reve
 
 ---
 
-## 💡 Key Architectural Learnings
+## 💡 Key Learnings from this Lab
 
-* **Event-Driven Compute Efficiency**: Understood how event-driven serverless architectures drastically reduce operational costs by consuming compute resources only when invoked by an event, ensuring zero cost during idle periods.
-* **Cross-Origin Accessibility (CORS)**: Configured API Gateway CORS preflight settings so any browser or frontend client can seamlessly talk to the backend API across different domains without being blocked by browser security rules.
-* **Least-Privilege Security with IAM**: Configured dedicated IAM execution roles for each serverless component, ensuring services only hold the explicit permissions required to execute their specific tasks (such as granting SES email sending permissions).
+* **Automating Emails with Amazon SES**: Learned how to set up Amazon Simple Email Service (SES) in sandbox mode and verify email identities to trigger automated emails.
+* **Building Workflows with Step Functions**: Designed a state machine using Amazon States Language (ASL) and used a `Wait` state to handle time delays before invoking the next task.
+* **Connecting Services with IAM Roles**: Configured custom IAM execution roles and policies so Lambda, Step Functions, and SES can securely talk to each other.
+* **Debugging with CloudWatch Logs**: Learned how to inspect CloudWatch Log Streams to trace event payloads and troubleshoot Lambda execution errors in real time.
+* **Hosting a Static Website on S3**: Learned how to upload HTML, CSS, and JavaScript files to an S3 bucket and turn on Static Website Hosting to serve a simple frontend.
